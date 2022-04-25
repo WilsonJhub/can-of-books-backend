@@ -37,4 +37,12 @@ Actual time needed to complete: _____
 
 Immense Gratitude to the following individuals on this projects success.  
   
-Simon Son: https://github.com/sson68x  
+Simon Son: https://github.com/sson68x
+
+
+Book Description References:  
+
+[Think and Grow Rich](https://fourminutebooks.com/think-and-grow-rich-summary/#:~:text=1%2DSentence%2DSummary%3A%20Think,the%20course%20of%2020%20years.&text=If%20The%20Intelligent%20Investor%20is,for%20successful%20people%20in%20general.)  
+[The Richest Man in Babylon](https://www.iwillteachyoutoberich.com/blog/back-to-basics-lessons-from-the-richest-man-in-babylon/)  
+[The Power of Now](https://readingraphics.com/book-summary-the-power-of-now/#:~:text=%E2%80%9CThe%20Power%20of%20Now%E2%80%9D%20is,ease%20and%20joy%20in%20life.)
+
