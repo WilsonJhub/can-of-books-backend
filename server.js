@@ -15,7 +15,7 @@ mongoose.connect(process.env.DB_URL);
 
 
 // Bring in a schema to interact with that model
-const Book = require('./models/books');
+const Books = require('./models/books');
 
 
 // add validation to confirm we are wired up to our mongo DB
@@ -30,12 +30,27 @@ db.once('open', function () {
 const app = express();
 app.use(cors());
 
+// define PORT validate env is working
 const PORT = process.env.PORT || 3001;
 
-app.get('/test', (request, response) => {
-
-  response.send('test request received')
-
+// Routes
+app.get('/', (request, response) => {
+  response.send('200...' + 'Welcome to your Self-Development Library!')
 })
+
+app.get('/books', getBooks);
+
+async function getBooks(request, response, next) {
+  try {
+    let results = await Books.find();
+    response.status(200).send(results);
+  } catch(err){
+    next(err);
+  }
+}
+
+
+
+
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
