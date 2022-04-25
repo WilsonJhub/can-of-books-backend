@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('This is your Can of Books Server')
+
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
