@@ -39,6 +39,7 @@ app.get('/', (request, response) => {
 })
 
 app.get('/books', getBooks);
+app.post('/books', getBooks);
 
 async function getBooks(request, response, next) {
   try {
@@ -49,7 +50,7 @@ async function getBooks(request, response, next) {
   }
 }
 
-
+async function postBooks(request, response, next)
 
 
 
