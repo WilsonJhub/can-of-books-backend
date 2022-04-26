@@ -36,7 +36,7 @@ Actual time needed to complete: 1.5hrs
 
 Immense Gratitude to the following individuals on this projects success.  
   
-Simon Son: https://github.com/sson68x  
+[Simon Son](https://github.com/sson68x)  
 
 
 Book Description References:  
