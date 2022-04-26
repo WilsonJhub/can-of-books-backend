@@ -28,7 +28,13 @@ db.once('open', function () {
 
 // implement express
 const app = express();
+
+// middleware
 app.use(cors());
+
+// If we want to receive JSON data from a request, we need this:
+app.use(express.json());
+
 
 // define PORT validate env is working
 const PORT = process.env.PORT || 3001;
@@ -39,8 +45,10 @@ app.get('/', (request, response) => {
 })
 
 app.get('/books', getBooks);
-app.post('/books', getBooks);
+app.post('/books', postBooks);
+app.delete('/books/:id', deleteBooks);
 
+// Get Book information Function
 async function getBooks(request, response, next) {
   try {
     let results = await Books.find();
@@ -50,7 +58,28 @@ async function getBooks(request, response, next) {
   }
 }
 
-async function postBooks(request, response, next)
+// Add Books Function
+async function postBooks(request, response, next) {
+  console.log(request.body);
+  try{
+    let createdBook = await Books.create(request.body);
+    response.status(200).send(createdBook)
+  }catch(err) {
+    next(err);
+  }
+}
+
+// Delete Books Function
+async function deleteBooks(request, response, next) {
+  let id = request.params.id;
+  console.log(id);
+  try {
+    await Books.findByIdAndDelete(id);
+    response.status(200).send('Book has been deleted');
+  } catch (err){
+    next(err);
+  }
+}
 
 
 
