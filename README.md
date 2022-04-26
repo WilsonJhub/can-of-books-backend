@@ -26,18 +26,17 @@ Name of feature: Can-of-Books
   
 Estimate of time needed to complete: 4hrs  
 
-Start time: _____  
+Start time: 4:20pm est  
 
-Finish time: _____  
+Finish time: 5:45 est  
 
-Actual time needed to complete: _____  
+Actual time needed to complete: 1.5hrs  
 
-## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+## Credit and Collaborations  
 
 Immense Gratitude to the following individuals on this projects success.  
   
-Simon Son: https://github.com/sson68x
+Simon Son: https://github.com/sson68x  
 
 
 Book Description References:  
