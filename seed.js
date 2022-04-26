@@ -18,18 +18,18 @@ async function seed() {
 console.log('Think and Grow Rich was added');
 
   await Book.create({
-    title: 'Richest Man in Babylon',
-    description: 'The classic principle of paying yourself first. George S. Clason recommends saving at least 10% of all income earned. Even in his example of those who are paying off debt, he still advocates setting aside this one-tenth.',
-    author: 'George S. Clason',
-    status: '“Our acts can be no wiser than our thoughts.”'
+    "title": "Richest Man in Babylon",
+    "description": "The classic principle of paying yourself first. George S. Clason recommends saving at least 10% of all income earned. Even in his example of those who are paying off debt, he still advocates setting aside this one-tenth.",
+    "author": "George S. Clason",
+    "status": "“Our acts can be no wiser than our thoughts.”"
   });
   console.log('Richest Man in Babylon was added');
   
   await Book.create({
-    title: 'The Power of Now',
-    description: 'A spiritual self-help guide to help us discover our true Being, release our pain and find deep inner peace. When we are intensely present in the Now, we respond from deep consciousness and flow with ease and joy in life.',
-    author: 'Eckhart Tolle',
-    status: '“Realize deeply that the present moment is all you have. Make the NOW the primary focus of your life.”'
+    "title": "The Power of Now",
+    "description": "A spiritual self-help guide to help us discover our true Being, release our pain and find deep inner peace. When we are intensely present in the Now, we respond from deep consciousness and flow with ease and joy in life.",
+    "author": "Eckhart Tolle",
+    "status": "“Realize deeply that the present moment is all you have. Make the NOW the primary focus of your life.”"
   });
   console.log('The Power of Now was added');
   mongoose.disconnect();
