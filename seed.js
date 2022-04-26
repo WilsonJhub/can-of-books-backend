@@ -13,7 +13,7 @@ async function seed() {
     title: 'Think and Grow Rich',
     description: 'A curation of the 13 most common habits of wealthy and successful people, distilled from studying over 500 individuals over the course of 20 years.',
     author: 'Napoleon Hill',
-    status: '“Whatever Your Mind Can Conceive and Believe, It Can Achieve.” '
+    status: '“Whatever Your Mind Can Conceive and Believe, It Can Achieve.”'
   });
 console.log('Think and Grow Rich was added');
 
