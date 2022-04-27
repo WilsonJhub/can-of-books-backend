@@ -24,11 +24,11 @@ Within this app, you will find a vast amount of books that have had a substantia
 ## Estimates
 Name of feature: Can-of-Books  
   
-Estimate of time needed to complete: 5hrs  
+Estimate of time needed to complete: 2hrs  
 
-Start time: 4:30pm est  
+Start time: 4:45pm est.  
 
-Finish time: 9:30 est  
+Finish time: _____ est.  
 
 Actual time needed to complete: 4hrs  
 

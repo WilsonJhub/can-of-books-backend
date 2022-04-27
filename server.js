@@ -37,7 +37,7 @@ app.use(express.json());
 
 
 // define PORT validate env is working
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 // Routes
 app.get('/', (request, response) => {
@@ -47,9 +47,10 @@ app.get('/', (request, response) => {
 app.get('/books', getBooks);
 app.post('/books', postBooks);
 app.delete('/books/:id', deleteBooks);
+app.put('/books/:id', putBooks)
 
-// Get Book information Function
-async function getBooks(request, response, next) {
+// Gets Book information Function
+async function getBooks (request, response, next) {
   try {
     let results = await Books.find();
     response.status(200).send(results);
@@ -58,8 +59,8 @@ async function getBooks(request, response, next) {
   }
 }
 
-// Add Books Function
-async function postBooks(request, response, next) {
+// Add(post) Books Function
+async function postBooks (request, response, next) {
   console.log(request.body);
   try{
     let createdBook = await Books.create(request.body);
@@ -70,7 +71,7 @@ async function postBooks(request, response, next) {
 }
 
 // Delete Books Function
-async function deleteBooks(request, response, next) {
+async function deleteBooks (request, response, next) {
   let id = request.params.id;
   console.log(id);
   try {
@@ -81,6 +82,23 @@ async function deleteBooks(request, response, next) {
   }
 }
 
+//PUT Function(UPDATE the information of the book.)
+async function putBooks (request, response, next) {
+  let id = request.params.id;
+  // data about the updated Book will be in request.body 
+  try {
+    //findByIdAndUpdate() method takes in 3 arguments
+    // - 1. ID of the thing in the database to update
+    // - 2. The updated data
+    // - 3. An options object
+    let updatedBook = await Books.findByIdAndUpdate(id, request.body, 
+      { new: true, overwrite: true })
+      response.status(200).send(updatedBook)
+  } catch(err) {
+    next(err);
+
+  }
+}
 
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
