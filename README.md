@@ -28,9 +28,9 @@ Estimate of time needed to complete: 2hrs
 
 Start time: 4:45pm est.  
 
-Finish time: _____ est.  
+Finish time: 5:45pm est.  
 
-Actual time needed to complete: 4hrs  
+Actual time needed to complete: 12hr  
 
 ## Credit and Collaborations  
 Logistical  
