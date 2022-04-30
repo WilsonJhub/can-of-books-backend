@@ -26,11 +26,11 @@ Name of feature: Can-of-Books
   
 Estimate of time needed to complete: 2hrs  
 
-Start time: 4:45pm est.  
+Start time: 5:00pm est.  
 
-Finish time: 5:45pm est.  
+Finish time: 7:00pm est.  
 
-Actual time needed to complete: 12hr  
+Actual time needed to complete: 2hr  
 
 ## Credit and Collaborations  
 Logistical  

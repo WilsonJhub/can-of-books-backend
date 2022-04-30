@@ -8,7 +8,7 @@ console.log('This is your Can of Books Server')
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-
+const verifyUser = require('./auth')
 // bring in mongoose
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DB_URL);
@@ -16,6 +16,7 @@ mongoose.connect(process.env.DB_URL);
 
 // Bring in a schema to interact with that model
 const Books = require('./models/books');
+const { response, request } = require('express');
 
 
 // add validation to confirm we are wired up to our mongo DB
@@ -44,6 +45,17 @@ app.get('/', (request, response) => {
   response.send('200...' + 'Welcome to your Self-Development Library!')
 })
 
+// to use verification functionality, paste your existing code inside of this function:
+// verifyUser(request, async (err, user) => {
+//     if (err) {
+//   console.log(err);
+//   response.send('invalid token');
+//   } else {
+//   // insert try catchy logic here. BE CAREFUL. check syntax IMMEDIATELY
+//   }
+// })
+
+
 app.get('/books', getBooks);
 app.post('/books', postBooks);
 app.delete('/books/:id', deleteBooks);
@@ -51,13 +63,26 @@ app.put('/books/:id', putBooks)
 
 // Gets Book information Function
 async function getBooks (request, response, next) {
-  try {
-    let results = await Books.find();
-    response.status(200).send(results);
-  } catch(err){
-    next(err);
-  }
+  verifyUser(request, async (err, user) => {
+    if (err) {
+      console.log(err);
+      response.send('invalid token');
+    } else {
+      const searchObject = {} 
+      if (request.query.email) {
+        searchObject.email = request.query.email;
+        // insert try catchy logic here. BE CAREFUL. check syntax IMMEDIATELY
+        try {
+          let results = await Books.find();
+          response.status(200).send(results);
+        } catch(err){
+          next(err);
+        }
+      }
+    }
+  })
 }
+  
 
 // Add(post) Books Function
 async function postBooks (request, response, next) {
