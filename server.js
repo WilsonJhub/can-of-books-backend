@@ -9,7 +9,6 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const verifyUser = require('./auth')
-// bring in mongoose
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DB_URL);
 
